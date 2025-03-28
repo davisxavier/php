@@ -11,10 +11,12 @@
   </style>
 </head>
 <body>
+<!--NOVO PROCESSO-->
 <h1>Testando PHP</h1>
     <?php
         echo "<h2>Ola, <br/> Mundo!</h2>";
     ?>
+<!--NOVO PROCESSO-->
 <h3>Teste de operadores e concatenação</h3> 
 <p>
     <h4>Variáveis</h4>
@@ -34,6 +36,7 @@
         echo"<br>";
         var_dump($nome);
     ?>
+<!--NOVO PROCESSO-->
 <h3>em html simples</h3>
 <p>
     olá, <?php echo $nome;?> <br>
@@ -57,6 +60,7 @@
         echo "<br/>O modulo vale ". ($n1%$n2);
         echo "<br/>A media vale $m";
       ?>
+<!--NOVO PROCESSO-->
 <h3>novos testes 2</h3>
 <p>
     <h4>Variáveis</h4>
@@ -76,6 +80,7 @@
         echo "<br/>O modulo vale ". ($n1%$n2);
         echo "<br/>A media vale $m";
       ?>
+<!--NOVO PROCESSO-->
       <h3>novos testes</h3>
 <p>
     <h4>funções</h4>
@@ -96,6 +101,7 @@
         echo "<br/>A parte inteira de $v2 e " . intval($v2);
         echo "<br/>O valor de $v1 em moeda e R$" . number_format($v1,2,",", "."); //(variável,número de casas decimais,separador decimal,separador de milhares)
 ?>
+<!--NOVO PROCESSO-->
 <p>
 <h4>Atribuição</h4>
 preco recebendo um valor diretamente na URL <br>
@@ -116,6 +122,7 @@ p = preco <br>
     echo "<br>usando concatenação:";
     echo "<br> O preço com desconto de 10% é de R$ ".number_format($preco,2,",",".");
 ?>
+<!--NOVO PROCESSO-->
 <p>
 <h4>Atribuição de decremento</h4>
 O ano digitado diretamente na URL como aa sofrerá as seguites alterações descritas durante os testes <br>
@@ -136,6 +143,7 @@ aa = atual <br>
     echo "--(variável)";, <b>decrementa a variável</b> antes e mostra depois;<br>
     echo "(variável)--";, <b>mostra a variável</b> e depois guarda o valor decremetado.'   
 ?>
+<!--NOVO PROCESSO-->
 <p>
 <h4>variável referenciadas</h4>
 $a = 3; - variável a recebe 3 <br>
@@ -151,6 +159,7 @@ echo $b; - mostrará 8 <br>
     echo "a é $a e <br>
     b é $b";      
 ?>
+<!--NOVO PROCESSO-->
 <p>
 <h4>porém se:</h4>
 $a = 3; - variável a recebe 3 <br>
@@ -167,6 +176,7 @@ Porque o <b>a</b> estará referenciado em <b>b</b>.
     echo "a é $a e <br>
     b é $b";      
 ?>
+<!--NOVO PROCESSO-->
 <p>
 <h4>Veriáveis de variáveis</h4>
 $nome = (fulano); - variável nome recebe fulano <br>
@@ -181,5 +191,75 @@ Isto porque fulano se tornou uma variável de uma variável.
     echo "A variável nome contém: <b>$nome</b> e <br>";
     echo "a variável Fulano contém:<b> $fulano</b>";      
 ?>
+<!--NOVO PROCESSO-->
+<style>
+        body{
+            background-color: red; 
+            text-align: center;
+        }
+        div{
+            margin-left: 30%;
+            background-color: white;
+            width: 33%;
+            padding-bottom: 1rem;
+        }
+        div#rest{
+            background-color: green;
+            width: 20%;
+            padding: 1rem;
+        }
+    </style>
+</head>
+<div>
+<h1>CALCULADORA SIMPLES</h1>
+<form action="aula6-260325.php" method="get"> 
+    <label for="">Primeiro valor: </label>
+    <input type="text" name="valor1"><br><br>
+    <label for="">Segundo valor: </label>
+    <input type="text" name="valor2"><br><br>
+    <label>Operação</label> <br>
+            <select name="oper" id="oper" >
+                <option value="0">selecione a operação</option> 
+                <option value="1">+</option>
+                <option value="2">-</option>
+                <option value="3">/</option>
+                <option value="4">x</option>
+            </select> 
+            <br><br>     
+    <button type="submit">Calcular</button><br><br><br>
+    
+
+</form>
+
+<br><br><br>
+<?php
+    //recebe dados
+    $valor1 = $_GET["valor1"];
+    $valor2 = $_GET["valor2"];
+    $oper = $_GET["oper"];
+
+    if ($valor1 == ""){
+        $fim = "Digite um valor válido";
+    } else if ($valor2 == ""){
+        $fim = "Digite um valor válido";
+    } else if ($oper == 1){
+        $fim = $valor1 + $valor2;
+    } else if ($oper == 2) {
+        $fim = $valor1 - $valor2;
+    } else if ($oper == 3) {
+        $fim = $valor1 / $valor2;
+    } else if ($oper == 4) {
+        $fim = $valor1 * $valor2;
+    } else {
+        $fim = "escolha não válida ainda";
+    };
+    
+    
+?>
+<div id="rest">
+    <label for="">Resultado <?php echo $fim;?> </label>
+</div>
+ 
+</div>
 </body>
 </html>
